@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kay Detrick — Researcher, Educator, Strategist</title>
+  <meta name="description" content="Kay Detrick is a PhD candidate in Educational Psychology and Program Evaluation at Old Dominion University, researching human-AI interaction, self-regulated learning, and technology-enhanced education.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --text-primary: #1A1A1A;
+      --text-secondary: #6B6B6B;
+      --text-tertiary: #9B9B9B;
+      --bg: #FFFFFF;
+      --surface: #F5F5F3;
+      --border: #E5E5E0;
+      --accent-bg: #EBF3FB;
+      --accent-text: #1A6DB5;
+      --max-width: 1100px;
+    }
+
+    html { font-size: 16px; }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      color: var(--text-primary);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      padding: 0 28px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      transition: color 0.2s;
+      padding-bottom: 2px;
+    }
+
+    .nav-links a:hover { color: var(--text-primary); }
+    .nav-links a.active {
+      color: var(--text-primary);
+      border-bottom: 1.5px solid var(--text-primary);
+    }
+
+    /* ── LAYOUT ── */
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    section {
+      border-bottom: 1px solid var(--border);
+      padding: 44px 0;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 28px;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 600;
+    }
+
+    .section-link {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      transition: color 0.2s;
+    }
+    .section-link:hover { color: var(--text-primary); }
+
+    /* ── HERO ── */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: end;
+      padding: 56px 0 48px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      margin-bottom: 16px;
+      font-weight: 400;
+    }
+
+    .hero-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 58px;
+      font-weight: 400;
+      line-height: 1.04;
+      margin-bottom: 20px;
+      letter-spacing: -0.01em;
+    }
+
+    .hero-name em { font-style: italic; }
+
+    .hero-tagline {
+      font-size: 14px;
+      line-height: 1.75;
+      color: var(--text-secondary);
+      font-weight: 300;
+      max-width: 340px;
+    }
+
+    .hero-right { padding-bottom: 4px; }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .stat {
+      background: var(--surface);
+      border-radius: 10px;
+      padding: 16px 18px;
+    }
+
+    .stat-n {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 30px;
+      font-weight: 600;
+      line-height: 1;
+      margin-bottom: 5px;
+    }
+
+    .stat-label {
+      font-size: 11px;
+      color: var(--text-tertiary);
+      letter-spacing: 0.04em;
+      font-weight: 400;
+      line-height: 1.4;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .pill {
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 5px 13px;
+      color: var(--text-secondary);
+      font-weight: 400;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .pill:hover { border-color: var(--text-secondary); color: var(--text-primary); }
+
+    /* ── ABOUT ── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .about-body {
+      font-size: 14px;
+      line-height: 1.8;
+      color: var(--text-secondary);
+      font-weight: 300;
+    }
+
+    .tags-label {
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      margin-bottom: 10px;
+    }
+
+    .tags {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .tag {
+      font-size: 12px;
+      padding: 9px 14px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text-secondary);
+      font-weight: 400;
+      transition: border-color 0.2s;
+    }
+
+    /* ── PUBLICATIONS ── */
+    .pub-list { display: flex; flex-direction: column; }
+
+    .pub {
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      gap: 20px;
+      align-items: start;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .pub:last-child { border-bottom: none; }
+
+    .pub-year {
+      font-size: 11px;
+      color: var(--text-tertiary);
+      letter-spacing: 0.06em;
+      padding-top: 2px;
+      font-weight: 400;
+    }
+
+    .pub-title {
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 1.45;
+      margin-bottom: 5px;
+    }
+
+    .pub-authors {
+      font-size: 12px;
+      color: var(--text-secondary);
+      font-weight: 300;
+      line-height: 1.5;
+    }
+
+    .pub-authors strong { font-weight: 500; color: var(--text-primary); }
+
+    .badge {
+      display: inline-block;
+      font-size: 10px;
+      letter-spacing: 0.06em;
+      background: var(--accent-bg);
+      color: var(--accent-text);
+      border-radius: 10px;
+      padding: 2px 8px;
+      margin-left: 6px;
+      vertical-align: middle;
+      font-weight: 400;
+    }
+
+    /* ── MENTION ── */
+    .mention-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .mention {
+      background: var(--surface);
+      border-radius: 12px;
+      padding: 18px 22px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 20px;
+      align-items: center;
+      transition: background 0.2s;
+    }
+
+    .mention:hover { background: #EEEDE9; }
+
+    .mention-source {
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      margin-bottom: 7px;
+    }
+
+    .mention-title {
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 1.45;
+    }
+
+    .mention-arrow {
+      font-size: 20px;
+      color: var(--text-tertiary);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 24px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+
+    .footer-contact {
+      font-size: 12px;
+      color: var(--text-secondary);
+      font-weight: 300;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 0 16px; }
+      .nav-links { gap: 16px; }
+      .nav-links a { font-size: 10px; }
+      .container { padding: 0 16px; }
+      section { padding: 32px 0; }
+
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding: 36px 0 32px;
+      }
+
+      .hero-name { font-size: 42px; }
+      .hero-tagline { max-width: 100%; }
+
+      .about-grid { grid-template-columns: 1fr; gap: 24px; }
+      .pub { grid-template-columns: 36px 1fr; gap: 12px; }
+
+      footer {
+        flex-direction: column;
+        gap: 6px;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .nav-name { font-size: 15px; }
+      .nav-links { gap: 12px; }
+      .hero-name { font-size: 36px; }
+      .stat-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-name">Kay Detrick</a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="teaching.html">Teaching</a></li>
+      <li><a href="cv.html">CV</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <div class="container">
+    <div class="hero">
+      <div class="hero-left">
+        <p class="hero-eyebrow">PhD Candidate · Educational Psychology &amp; Program Evaluation</p>
+        <h1 class="hero-name">Integrating<br><em>Research</em><br>&amp; Practice</h1>
+        <p class="hero-tagline">Researcher, educator, and strategist at the intersection of artificial intelligence, self-regulated learning, and technology-enhanced instruction.</p>
+      </div>
+      <div class="hero-right">
+        <div class="stat-grid">
+          <div class="stat">
+            <div class="stat-n">10+</div>
+            <div class="stat-label">Publications &amp; works in progress</div>
+          </div>
+          <div class="stat">
+            <div class="stat-n">ODU</div>
+            <div class="stat-label">Darden College of Education</div>
+          </div>
+          <div class="stat">
+            <div class="stat-n">AI</div>
+            <div class="stat-label">in Education research focus</div>
+          </div>
+          <div class="stat">
+            <div class="stat-n">SRL</div>
+            <div class="stat-label">Self-regulated learning emphasis</div>
+          </div>
+        </div>
+        <div class="pill-row">
+          <a href="https://orcid.org/0009-0000-5610-2864" target="_blank" rel="noopener" class="pill">ORCID</a>
+          <a href="https://www.linkedin.com/in/ritadetrick/" target="_blank" rel="noopener" class="pill">LinkedIn</a>
+          <a href="https://www.researchgate.net/profile/Rita-Detrick" target="_blank" rel="noopener" class="pill">ResearchGate</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">About</h2>
+        <a href="about.html" class="section-link">Full bio →</a>
+      </div>
+      <div class="about-grid">
+        <p class="about-body">I am a researcher, educator, and strategist dedicated to bridging learning theory and technological innovation. As a PhD candidate at Old Dominion University, I investigate how artificial intelligence shapes student self-regulation — and how we can design learning experiences that amplify human potential rather than replace it. I bring nearly a decade of industry experience supporting military-connected learners, and apply that same pragmatism to my academic work.</p>
+        <div>
+          <p class="tags-label">Research Areas</p>
+          <div class="tags">
+            <span class="tag">Human-AI Interaction</span>
+            <span class="tag">AI in Education</span>
+            <span class="tag">Self-Regulated Learning</span>
+            <span class="tag">Nontraditional Learners</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Recent Publications</h2>
+        <a href="research.html" class="section-link">All publications →</a>
+      </div>
+      <div class="pub-list">
+
+        <div class="pub">
+          <span class="pub-year">2026</span>
+          <div>
+            <p class="pub-title">Adult learners’ perspectives of AI applications in supporting andragogy</p>
+            <p class="pub-authors">Kim, J., Lin, X., Yu, S., &amp; <strong>Detrick, R.</strong></p>
+          </div>
+        </div>
+
+        <div class="pub">
+          <span class="pub-year">2026</span>
+          <div>
+            <p class="pub-title">Students’ perception of generative AI-assisted collaborative argumentation</p>
+            <p class="pub-authors">Kim, J., Yu, S., <strong>Detrick, R.</strong>, Fan, L., &amp; Li, N.</p>
+          </div>
+        </div>
+
+        <div class="pub">
+          <span class="pub-year">2026</span>
+          <div>
+            <p class="pub-title">Healthy habits on campus: A field study of nudge-based interventions to promote healthier food choices</p>
+            <p class="pub-authors"><strong>Detrick, R.</strong>, Kim, J., Lee, E., Touchstone, E., Yu, Y., Jia, M., &amp; Rusli, L.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- IN THE NEWS -->
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">In the News</h2>
+      </div>
+      <div class="mention-list">
+        <a href="https://www.odu.edu/article/noble-goals-old-dominion-university-researchers-build-human-centered-ethical-ai-for" target="_blank" rel="noopener" class="mention">
+          <div>
+            <p class="mention-source">Old Dominion University</p>
+            <p class="mention-title">Noble Goals: Old Dominion University Researchers Build Human-Centered, Ethical AI for Education</p>
+          </div>
+          <span class="mention-arrow">→</span>
+        </a>
+        <a href="https://www.t3networkhub.org/ler-toolkit/case-studies" target="_blank" rel="noopener" class="mention">
+          <div>
+            <p class="mention-source">T3 Network Hub · LER Toolkit Case Studies</p>
+            <p class="mention-title">Recognizing Skills and Experiences by Implementing Learning and Employment Records as Digital Verifiable Credentials</p>
+          </div>
+          <span class="mention-arrow">→</span>
+        </a>
+        <a href="https://www.troy.edu/academics/colleges-schools/education-and-behavioral-sciences/departments/social-science/alumni-spotlight.html" target="_blank" rel="noopener" class="mention">
+          <div>
+            <p class="mention-source">Troy University</p>
+            <p class="mention-title">Alumni Spotlight</p>
+          </div>
+          <span class="mention-arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <div class="container">
+    <footer>
+      <span class="footer-name">Kay Detrick · rkdetrick.github.io</span>
+      <span class="footer-contact">Hampton Roads, VA · rkdetrick@gmail.com</span>
+    </footer>
+  </div>
+
+</body>
+</html>
