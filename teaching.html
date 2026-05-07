@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teaching — Kay Detrick</title>
+  <meta name="description" content="Kay Detrick's teaching experience, philosophy, and student feedback across secondary, undergraduate, and graduate levels.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --text-primary: #1A1A1A;
+      --text-secondary: #6B6B6B;
+      --text-tertiary: #9B9B9B;
+      --bg: #FFFFFF;
+      --surface: #F5F5F3;
+      --border: #E5E5E0;
+      --accent-bg: #EBF3FB;
+      --accent-text: #1A6DB5;
+      --max-width: 1100px;
+    }
+
+    html { font-size: 16px; }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      color: var(--text-primary);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      padding: 0 28px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      transition: color 0.2s;
+      padding-bottom: 2px;
+    }
+
+    .nav-links a:hover { color: var(--text-primary); }
+    .nav-links a.active {
+      color: var(--text-primary);
+      border-bottom: 1.5px solid var(--text-primary);
+    }
+
+    /* ── LAYOUT ── */
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    section {
+      border-bottom: 1px solid var(--border);
+      padding: 44px 0;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+
+    /* ── PAGE HEADER ── */
+    .page-header {
+      border-bottom: 1px solid var(--border);
+      padding: 48px 0 40px;
+      display: grid;
+      grid-template-columns: auto 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .header-photo {
+      width: 200px;
+      height: 240px;
+      object-fit: cover;
+      border-radius: 10px;
+      display: block;
+      flex-shrink: 0;
+    }
+
+    .page-eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      margin-bottom: 14px;
+      font-weight: 400;
+    }
+
+    .page-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 52px;
+      font-weight: 400;
+      line-height: 1.06;
+      letter-spacing: -0.01em;
+    }
+
+    .page-title em { font-style: italic; }
+
+    .page-subtitle {
+      font-size: 14px;
+      line-height: 1.8;
+      color: var(--text-secondary);
+      font-weight: 300;
+      padding-bottom: 4px;
+    }
+
+    /* ── PHILOSOPHY ── */
+    .philosophy-grid {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .philosophy-wrap {
+      display: flex;
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .philosophy-bar {
+      width: 2px;
+      background: var(--border);
+      flex-shrink: 0;
+      border-radius: 2px;
+    }
+
+    .philosophy-text {
+      font-size: 14px;
+      line-height: 1.85;
+      color: var(--text-secondary);
+      font-weight: 300;
+    }
+
+    .philosophy-photo {
+      width: 280px;
+      height: 210px;
+      object-fit: cover;
+      border-radius: 10px;
+      display: block;
+      flex-shrink: 0;
+    }
+
+    /* ── COURSE CARDS ── */
+    .course-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .course-card {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px 22px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .course-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+
+    .course-institution {
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      font-weight: 400;
+    }
+
+    .course-badge {
+      font-size: 10px;
+      letter-spacing: 0.04em;
+      border-radius: 10px;
+      padding: 3px 9px;
+      font-weight: 400;
+    }
+
+    .badge-current {
+      background: var(--accent-bg);
+      color: var(--accent-text);
+    }
+
+    .badge-default {
+      background: var(--surface);
+      color: var(--text-secondary);
+    }
+
+    .course-name {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.35;
+      margin-bottom: 10px;
+    }
+
+    .course-desc {
+      font-size: 12px;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      font-weight: 300;
+      flex: 1;
+    }
+
+    .course-level {
+      font-size: 10px;
+      color: var(--text-tertiary);
+      letter-spacing: 0.06em;
+      margin-top: 12px;
+      font-weight: 400;
+    }
+
+    /* ── GUEST CARDS ── */
+    .guest-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .guest-card {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .guest-label {
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      margin-bottom: 5px;
+      font-weight: 400;
+    }
+
+    .guest-name {
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 1.4;
+      margin-bottom: 3px;
+    }
+
+    .guest-term {
+      font-size: 11px;
+      color: var(--text-tertiary);
+      font-weight: 300;
+    }
+
+    .guest-badge {
+      font-size: 10px;
+      background: var(--surface);
+      color: var(--text-secondary);
+      border-radius: 10px;
+      padding: 3px 9px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* ── STUDENT VOICES ── */
+    .voices-intro {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      font-weight: 300;
+      margin-bottom: 24px;
+    }
+
+    .quote-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .quote-card {
+      background: var(--surface);
+      border-radius: 12px;
+      padding: 20px 22px;
+    }
+
+    .quote-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 16px;
+      font-style: italic;
+      line-height: 1.65;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+    }
+
+    .quote-context {
+      font-size: 11px;
+      color: var(--text-tertiary);
+      letter-spacing: 0.06em;
+      font-weight: 400;
+    }
+
+    /* ── SYNTHESIS TABLE ── */
+    .synthesis {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px 26px;
+    }
+
+    .synthesis-label {
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      margin-bottom: 16px;
+      font-weight: 400;
+    }
+
+    .synthesis-row {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 20px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      align-items: baseline;
+    }
+
+    .synthesis-row:last-child { border-bottom: none; }
+
+    .synthesis-theme {
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .synthesis-note {
+      font-size: 12px;
+      color: var(--text-secondary);
+      font-weight: 300;
+      line-height: 1.6;
+    }
+
+    .consent-note {
+      margin-top: 16px;
+      font-size: 11px;
+      color: var(--text-tertiary);
+      font-style: italic;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 24px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+
+    .footer-contact {
+      font-size: 12px;
+      color: var(--text-secondary);
+      font-weight: 300;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 0 16px; }
+      .nav-links { gap: 16px; }
+      .nav-links a { font-size: 10px; }
+      .container { padding: 0 16px; }
+      section { padding: 32px 0; }
+
+      .page-header {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 36px 0 32px;
+      }
+
+      .header-photo { width: 100%; height: 200px; }
+      .philosophy-grid { grid-template-columns: 1fr; }
+      .philosophy-photo { width: 100%; height: 180px; }
+
+      .page-title { font-size: 38px; }
+      .course-grid { grid-template-columns: 1fr; }
+      .guest-row { grid-template-columns: 1fr; }
+      .quote-grid { grid-template-columns: 1fr; }
+
+      .synthesis-row {
+        grid-template-columns: 1fr;
+        gap: 6px;
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 6px;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .nav-name { font-size: 15px; }
+      .nav-links { gap: 12px; }
+      .page-title { font-size: 32px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-name">Kay Detrick</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="teaching.html" class="active">Teaching</a></li>
+      <li><a href="cv.html">CV</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="container">
+    <div class="page-header">
+      <img src="teaching-header.jpg" alt="Kay Detrick presenting at a lecture" class="header-photo">
+      <div>
+        <p class="page-eyebrow">Scholar · Educator · Practitioner</p>
+        <h1 class="page-title">Teaching &amp;<br><em>Learning</em></h1>
+      </div>
+      <p class="page-subtitle">My teaching is grounded in pragmatism and constructivism, and shaped by the belief that students engage more deeply when they understand the value of what they're learning. I focus on making that value visible — and designing the conditions that make meaningful learning possible.</p>
+    </div>
+  </div>
+
+  <!-- TEACHING PHILOSOPHY -->
+  <section>
+    <div class="container">
+      <h2 class="section-title">Teaching Philosophy</h2>
+      <div class="philosophy-grid">
+        <div class="philosophy-wrap">
+          <div class="philosophy-bar"></div>
+          <p class="philosophy-text">I believe students engage most deeply when they understand the value of what they're learning — not just its academic purpose, but its relevance to their goals, their work, and their lives beyond the course. I approach instructional design the way I approach research: with intentional scaffolding, frequent formative feedback, and a willingness to change how I teach something before I change what I expect of students. I am committed to creating inclusive environments where students' identities and prior experiences are treated as assets, and where the conditions for meaningful learning are built deliberately into the design of the course itself.</p>
+        </div>
+        <img src="teaching-philosophy.jpg" alt="Classroom discussion at a conference" class="philosophy-photo">
+      </div>
+    </div>
+  </section>
+
+  <!-- COURSES TAUGHT -->
+  <section>
+    <div class="container">
+      <h2 class="section-title">Courses Taught</h2>
+
+      <div class="course-grid">
+
+        <div class="course-card">
+          <div class="course-meta">
+            <span class="course-institution">Old Dominion University</span>
+            <span class="course-badge badge-current">Spring 2026</span>
+          </div>
+          <p class="course-name">AI in Education: Design, Teaching, and Assessment</p>
+          <p class="course-desc">Discussion-based exploration of generative AI's impact on teaching, learning, and instructional design. Designed and delivered for an internationally diverse cohort of K–12 and higher education practitioners through ODU's Office of International Collaborations.</p>
+          <p class="course-level">Graduate · Online Synchronous · International cohort</p>
+        </div>
+
+        <div class="course-card">
+          <div class="course-meta">
+            <span class="course-institution">Old Dominion University</span>
+            <span class="course-badge badge-current">Fall 2025</span>
+          </div>
+          <p class="course-name">Introduction to AI in Education</p>
+          <p class="course-desc">Foundational course in AI literacy, critical evaluation, and project-based application across K–12 and higher education contexts. First offering in a two-semester sequence; positive outcomes informed the design of the subsequent course.</p>
+          <p class="course-level">Graduate · Online Synchronous · International cohort</p>
+        </div>
+
+        <div class="course-card">
+          <div class="course-meta">
+            <span class="course-institution">Old Dominion University</span>
+            <span class="course-badge badge-current">Fall 2025 – Spring 2026</span>
+          </div>
+          <p class="course-name">Learning to Learn</p>
+          <p class="course-desc">Undergraduate course in academic self-regulation, study strategies, and metacognitive skill development. Emphasized evidence-based practices and active-learning strategies across two semesters of iterative course improvement.</p>
+          <p class="course-level">Undergraduate · In-person</p>
+        </div>
+
+        <div class="course-card">
+          <div class="course-meta">
+            <span class="course-institution">Newport News Public Schools</span>
+            <span class="course-badge badge-default">Beginning Fall 2026</span>
+          </div>
+          <p class="course-name">CTE Business Education</p>
+          <p class="course-desc">Secondary business education courses emphasizing career readiness, technology integration, and real-world application of business concepts. Virginia-licensed in Business Education and Marketing Education.</p>
+          <p class="course-level">Secondary · CTE</p>
+        </div>
+
+      </div>
+
+      <div class="guest-row">
+        <div class="guest-card">
+          <div>
+            <p class="guest-label">Guest Lecturer</p>
+            <p class="guest-name">IDT 860: Cognition and Instructional Design</p>
+            <p class="guest-term">Old Dominion University · Spring 2026</p>
+          </div>
+          <span class="guest-badge">Graduate</span>
+        </div>
+        <div class="guest-card">
+          <div>
+            <p class="guest-label">Guest Lecturer</p>
+            <p class="guest-name">IDT 837: Consulting Skills for Instructional Designers</p>
+            <p class="guest-term">Old Dominion University · Spring 2025</p>
+          </div>
+          <span class="guest-badge">Graduate</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WHAT STUDENTS SAY -->
+  <section>
+    <div class="container">
+      <h2 class="section-title">What Students Say</h2>
+      <p class="voices-intro">The following reflects themes from student feedback collected across courses. Responses are paraphrased and de-identified to protect student privacy.</p>
+
+      <div class="quote-grid">
+        <div class="quote-card">
+          <p class="quote-text">"Students who showed up and communicated found that their effort was seen and acknowledged — something that made a real difference in a course that moves at a steady pace."</p>
+          <p class="quote-context">Learning to Learn · undergraduate student · paraphrased</p>
+        </div>
+        <div class="quote-card">
+          <p class="quote-text">"The structure of lecture followed by discussion gave space to absorb ideas and then actually practice them — and having the instructor available throughout the project made a complex topic feel manageable."</p>
+          <p class="quote-context">AI in Education · international cohort · paraphrased</p>
+        </div>
+      </div>
+
+      <div class="synthesis">
+        <p class="synthesis-label">Recurring themes across courses</p>
+        <div class="synthesis-row">
+          <span class="synthesis-theme">Accessibility &amp; approachability</span>
+          <span class="synthesis-note">Students across both courses describe feeling comfortable communicating needs and having those needs met without judgment.</span>
+        </div>
+        <div class="synthesis-row">
+          <span class="synthesis-theme">Practical, transferable learning</span>
+          <span class="synthesis-note">Multiple students note applying course strategies immediately in other classes — a consistent indicator of real learning transfer.</span>
+        </div>
+        <div class="synthesis-row">
+          <span class="synthesis-theme">Engagement without overwhelm</span>
+          <span class="synthesis-note">Students describe courses as interactive and appropriately paced — neither boring nor inaccessibly dense.</span>
+        </div>
+        <div class="synthesis-row">
+          <span class="synthesis-theme">Instructor presence &amp; follow-through</span>
+          <span class="synthesis-note">International students in particular note consistent follow-up communication and availability as defining features of the course experience.</span>
+        </div>
+      </div>
+
+      <p class="consent-note">&#8227; Feedback paraphrased and de-identified. Direct quotes collected with consent will be added as available.</p>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <div class="container">
+    <footer>
+      <span class="footer-name">Kay Detrick · rkdetrick.github.io</span>
+      <span class="footer-contact">Hampton Roads, VA · rkdetrick@gmail.com</span>
+    </footer>
+  </div>
+
+</body>
+</html>
