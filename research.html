@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Research — Kay Detrick</title>
+  <meta name="description" content="Kay Detrick's publications, presentations, awards, and research interests in AI in education, self-regulated learning, and technology-enhanced instruction.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --text-primary: #1A1A1A;
+      --text-secondary: #6B6B6B;
+      --text-tertiary: #9B9B9B;
+      --bg: #FFFFFF;
+      --surface: #F5F5F3;
+      --border: #E5E5E0;
+      --accent-bg: #EBF3FB;
+      --accent-text: #1A6DB5;
+      --max-width: 1100px;
+    }
+
+    html { font-size: 16px; }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      color: var(--text-primary);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      padding: 0 28px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      transition: color 0.2s;
+      padding-bottom: 2px;
+    }
+
+    .nav-links a:hover { color: var(--text-primary); }
+    .nav-links a.active {
+      color: var(--text-primary);
+      border-bottom: 1.5px solid var(--text-primary);
+    }
+
+    /* ── LAYOUT ── */
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    section {
+      border-bottom: 1px solid var(--border);
+      padding: 44px 0;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 28px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 28px;
+    }
+
+    .section-link {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      transition: color 0.2s;
+    }
+    .section-link:hover { color: var(--text-primary); }
+
+    /* ── PAGE HEADER ── */
+    .page-header {
+      border-bottom: 1px solid var(--border);
+      padding: 48px 0 44px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: end;
+    }
+
+    .page-eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      margin-bottom: 14px;
+      font-weight: 400;
+    }
+
+    .page-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 52px;
+      font-weight: 400;
+      line-height: 1.06;
+      letter-spacing: -0.01em;
+    }
+
+    .page-title em { font-style: italic; }
+
+    .page-subtitle {
+      font-size: 14px;
+      line-height: 1.8;
+      color: var(--text-secondary);
+      font-weight: 300;
+      padding-bottom: 8px;
+    }
+
+    /* ── RESEARCH INTERESTS ── */
+    .interests-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .interest-card {
+      background: var(--surface);
+      border-radius: 10px;
+      padding: 16px 18px;
+    }
+
+    .interest-title {
+      font-size: 13px;
+      font-weight: 500;
+      margin-bottom: 5px;
+      line-height: 1.3;
+    }
+
+    .interest-body {
+      font-size: 12px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      font-weight: 300;
+    }
+
+    /* ── PUBLICATION LIST ── */
+    .pub-subsection {
+      margin-bottom: 40px;
+    }
+
+    .pub-subsection:last-child { margin-bottom: 0; }
+
+    .pub-subsection-title {
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      font-weight: 400;
+      margin-bottom: 4px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .pub-list { display: flex; flex-direction: column; }
+
+    .pub {
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      gap: 20px;
+      align-items: start;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .pub:last-child { border-bottom: none; }
+
+    .pub-year {
+      font-size: 11px;
+      color: var(--text-tertiary);
+      letter-spacing: 0.06em;
+      padding-top: 2px;
+      font-weight: 400;
+    }
+
+    .pub-title {
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 1.45;
+      margin-bottom: 5px;
+    }
+
+    .pub-title a {
+      color: var(--accent-text);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .pub-authors {
+      font-size: 12px;
+      color: var(--text-secondary);
+      font-weight: 300;
+      line-height: 1.5;
+      margin-bottom: 4px;
+    }
+
+    .pub-authors strong { font-weight: 500; color: var(--text-primary); }
+
+    .pub-journal {
+      font-size: 12px;
+      color: var(--text-secondary);
+      font-style: italic;
+      font-weight: 300;
+    }
+
+    .pub-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 10px;
+      letter-spacing: 0.04em;
+      border-radius: 10px;
+      padding: 2px 8px;
+      font-weight: 400;
+    }
+
+    .badge-blue { background: var(--accent-bg); color: var(--accent-text); }
+    .badge-gray { background: var(--surface); color: var(--text-secondary); }
+    .badge-green { background: #EBF7F0; color: #1A7A47; }
+
+    /* ── PRESENTATIONS ── */
+    .pres-list { display: flex; flex-direction: column; }
+
+    .pres {
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      gap: 20px;
+      align-items: start;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .pres:last-child { border-bottom: none; }
+
+    .pres-year {
+      font-size: 11px;
+      color: var(--text-tertiary);
+      letter-spacing: 0.06em;
+      padding-top: 2px;
+      font-weight: 400;
+    }
+
+    .pres-title {
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 1.4;
+      margin-bottom: 4px;
+    }
+
+    .pres-authors {
+      font-size: 12px;
+      color: var(--text-secondary);
+      font-weight: 300;
+      line-height: 1.5;
+      margin-bottom: 3px;
+    }
+
+    .pres-authors strong { font-weight: 500; color: var(--text-primary); }
+
+    .pres-venue {
+      font-size: 12px;
+      color: var(--text-tertiary);
+      font-weight: 300;
+    }
+
+    /* ── AWARDS ── */
+    .awards-list { display: flex; flex-direction: column; gap: 0; }
+
+    .award {
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      gap: 20px;
+      align-items: start;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .award:last-child { border-bottom: none; }
+
+    .award-year {
+      font-size: 11px;
+      color: var(--text-tertiary);
+      letter-spacing: 0.06em;
+      padding-top: 2px;
+      font-weight: 400;
+    }
+
+    .award-name {
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 1.4;
+      margin-bottom: 3px;
+    }
+
+    .award-org {
+      font-size: 12px;
+      color: var(--text-secondary);
+      font-weight: 300;
+    }
+
+    /* ── SERVICE ── */
+    .service-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .service-card {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px 22px;
+    }
+
+    .service-card-label {
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      margin-bottom: 14px;
+      font-weight: 400;
+    }
+
+    .service-list-items {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .service-item {
+      font-size: 12px;
+      color: var(--text-secondary);
+      font-weight: 300;
+      line-height: 1.5;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .service-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .service-item-name {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-primary);
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 24px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+
+    .footer-contact {
+      font-size: 12px;
+      color: var(--text-secondary);
+      font-weight: 300;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 0 16px; }
+      .nav-links { gap: 16px; }
+      .nav-links a { font-size: 10px; }
+      .container { padding: 0 16px; }
+      section { padding: 32px 0; }
+
+      .page-header {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 36px 0 32px;
+      }
+
+      .page-title { font-size: 38px; }
+      .interests-grid { grid-template-columns: 1fr; }
+      .pub { grid-template-columns: 36px 1fr; gap: 12px; }
+      .pres { grid-template-columns: 36px 1fr; gap: 12px; }
+      .award { grid-template-columns: 36px 1fr; gap: 12px; }
+      .service-grid { grid-template-columns: 1fr; }
+
+      footer {
+        flex-direction: column;
+        gap: 6px;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .nav-name { font-size: 15px; }
+      .nav-links { gap: 12px; }
+      .page-title { font-size: 32px; }
+      .interests-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-name">Kay Detrick</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="research.html" class="active">Research</a></li>
+      <li><a href="teaching.html">Teaching</a></li>
+      <li><a href="cv.html">CV</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="container">
+    <div class="page-header">
+      <div>
+        <p class="page-eyebrow">Publications · Presentations · Awards</p>
+        <h1 class="page-title">Research &amp;<br><em>Scholarship</em></h1>
+      </div>
+      <p class="page-subtitle">My scholarship sits at the intersection of human-AI interaction, self-regulated learning, and technology-enhanced education. I am particularly interested in how students engage with generative AI tools — and what that engagement means for how we design learning experiences that serve them well.</p>
+    </div>
+  </div>
+
+  <!-- RESEARCH INTERESTS -->
+  <section>
+    <div class="container">
+      <h2 class="section-title">Research Interests</h2>
+      <div class="interests-grid">
+        <div class="interest-card">
+          <p class="interest-title">Human-AI Interaction in Education</p>
+          <p class="interest-body">How students engage with generative AI tools, including prompt practices, interaction patterns, and the relationship between AI use and academic outcomes.</p>
+        </div>
+        <div class="interest-card">
+          <p class="interest-title">Self-Regulated &amp; Socially Shared Regulation</p>
+          <p class="interest-body">The role of self-regulatory processes in learning, and how generative AI may support or disrupt students' ability to monitor and direct their own learning.</p>
+        </div>
+        <div class="interest-card">
+          <p class="interest-title">Technology-Enhanced Learning</p>
+          <p class="interest-body">Online and technology-mediated learning environments, AI-assisted writing, and the design of digital tools that support learner success across contexts.</p>
+        </div>
+        <div class="interest-card">
+          <p class="interest-title">Equity, Access &amp; Nontraditional Learners</p>
+          <p class="interest-body">How educational technology can expand or constrain access to learning, with particular attention to nontraditional, adult, and military-connected student populations.</p>
+        </div>
+        <div class="interest-card">
+          <p class="interest-title">Academic Identity &amp; Motivation</p>
+          <p class="interest-body">Student experience, academic identity formation, and learning motivation in higher education, including how emerging technologies shape students' sense of themselves as learners.</p>
+        </div>
+        <div class="interest-card">
+          <p class="interest-title">Mixed Methods Research</p>
+          <p class="interest-body">Methodological emphasis on mixed and multi-methods approaches to educational research, integrating quantitative and qualitative data to address complex questions about learning.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <section>
+    <div class="container">
+      <h2 class="section-title">Publications</h2>
+
+      <!-- Journal Articles -->
+      <div class="pub-subsection">
+        <p class="pub-subsection-title">Peer-Reviewed Journal Articles</p>
+        <div class="pub-list">
+
+          <div class="pub">
+            <span class="pub-year">2026</span>
+            <div>
+              <p class="pub-title"><a href="https://doi.org/10.1007/s11423-026-10621-2" target="_blank" rel="noopener">Adult learners' perspectives of AI applications in supporting andragogy</a></p>
+              <p class="pub-authors">Kim, J., Lin, X., Yu, S., &amp; <strong>Detrick, R.</strong></p>
+              <p class="pub-journal">Educational Technology Research and Development</p>
+              <div class="pub-meta">
+                <span class="badge badge-gray">SSCI · Q1</span>
+                <span class="badge badge-gray">IF 4.2</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pub">
+            <span class="pub-year">2026</span>
+            <div>
+              <p class="pub-title"><a href="https://doi.org/10.1111/ejed.70576" target="_blank" rel="noopener">Students' perception of generative AI-assisted collaborative argumentation</a></p>
+              <p class="pub-authors">Kim, J., Yu, S., <strong>Detrick, R.</strong>, Fan, L., &amp; Li, N.</p>
+              <p class="pub-journal">European Journal of Education Research, Development and Policy</p>
+              <div class="pub-meta">
+                <span class="badge badge-gray">SSCI · Q3</span>
+                <span class="badge badge-gray">IF 3.6</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pub">
+            <span class="pub-year">2026</span>
+            <div>
+              <p class="pub-title"><a href="https://doi.org/10.1111/aphw.70117" target="_blank" rel="noopener">Healthy habits on campus: A field study of nudge-based interventions to promote healthier food choices</a></p>
+              <p class="pub-authors"><strong>Detrick, R.</strong>, Kim, J., Lee, E., Touchstone, E., Yu, Y., Jia, M., &amp; Rusli, L.</p>
+              <p class="pub-journal">Applied Psychology: Health and Well-Being</p>
+              <div class="pub-meta">
+                <span class="badge badge-gray">SSCI · Q1</span>
+                <span class="badge badge-gray">IF 3.6</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pub">
+            <span class="pub-year">2025</span>
+            <div>
+              <p class="pub-title"><a href="https://doi.org/10.1080/01587919.2025.2571899" target="_blank" rel="noopener">Investigating working adult learners' feedback literacy in online project-based learning: A convergent mixed methods study</a></p>
+              <p class="pub-authors">Ren, X., Zhou, Y., &amp; <strong>Detrick, R.</strong></p>
+              <p class="pub-journal">Distance Education</p>
+              <div class="pub-meta">
+                <span class="badge badge-gray">SSCI · Q1</span>
+                <span class="badge badge-gray">IF 3.0</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pub">
+            <span class="pub-year">2025</span>
+            <div>
+              <p class="pub-title"><a href="https://doi.org/10.1007/s11423-025-10549-z" target="_blank" rel="noopener">Designing AI-powered learning: Adult learners' expectations for curriculum and human-AI interaction</a></p>
+              <p class="pub-authors">Kim, J., Yu, S., <strong>Detrick, R.</strong>, Lin, X., &amp; Li, N.</p>
+              <p class="pub-journal">Educational Technology Research and Development</p>
+              <div class="pub-meta">
+                <span class="badge badge-gray">SSCI · Q1</span>
+                <span class="badge badge-gray">IF 4.2</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pub">
+            <span class="pub-year">2025</span>
+            <div>
+              <p class="pub-title"><a href="https://doi.org/10.1007/s12528-025-09444-6" target="_blank" rel="noopener">Students-Generative AI interaction patterns and its impact on academic writing</a></p>
+              <p class="pub-authors">Kim, J., Lee, S. S., <strong>Detrick, R.</strong>, Wang, J., &amp; Li, N.</p>
+              <p class="pub-journal">Journal of Computing in Higher Education</p>
+              <div class="pub-meta">
+                <span class="badge badge-gray">SSCI · Q1</span>
+                <span class="badge badge-gray">IF 4.9</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pub">
+            <span class="pub-year">2025</span>
+            <div>
+              <p class="pub-title"><a href="https://doi.org/10.1080/15391523.2025.2456043" target="_blank" rel="noopener">Students' prompt patterns and its effects in AI-assisted academic writing: Focusing on students' level of AI literacy</a></p>
+              <p class="pub-authors">Kim, J., Yu, S., Lee, S. S., &amp; <strong>Detrick, R.</strong></p>
+              <p class="pub-journal">Journal of Research on Technology in Education</p>
+              <div class="pub-meta">
+                <span class="badge badge-gray">SSCI · Q1</span>
+                <span class="badge badge-gray">IF 5.0</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pub">
+            <span class="pub-year">2025</span>
+            <div>
+              <p class="pub-title"><a href="https://doi.org/10.1007/s10639-024-13187-9" target="_blank" rel="noopener">Socially shared regulation of learning and Generative AI: Opportunities to support socially shared regulation</a></p>
+              <p class="pub-authors">Kim, J., <strong>Detrick, R.</strong>, Yu, S., Song, Y., Bol, L., &amp; Li, N.</p>
+              <p class="pub-journal">Education and Information Technologies</p>
+              <div class="pub-meta">
+                <span class="badge badge-gray">SSCI · Q1</span>
+                <span class="badge badge-gray">IF 5.4</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pub">
+            <span class="pub-year">2024</span>
+            <div>
+              <p class="pub-title"><a href="https://doi.org/10.1007/s10639-024-12878-7" target="_blank" rel="noopener">Exploring students' perspectives on Generative AI-assisted academic writing</a></p>
+              <p class="pub-authors">Kim, J., Yu, S., <strong>Detrick, R.</strong>, &amp; Li, N.</p>
+              <p class="pub-journal">Education and Information Technologies</p>
+              <div class="pub-meta">
+                <span class="badge badge-gray">SSCI · Q1</span>
+                <span class="badge badge-gray">IF 5.4</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Book Chapters -->
+      <div class="pub-subsection">
+        <p class="pub-subsection-title">Book Chapters</p>
+        <div class="pub-list">
+
+          <div class="pub">
+            <span class="pub-year">2026</span>
+            <div>
+              <p class="pub-title"><a href="https://www.igi-global.com/gateway/chapter/397703" target="_blank" rel="noopener">Learning design to advance human–AI collaboration in K–12 education</a></p>
+              <p class="pub-authors">Chan, W. S., Kim, J., Yu, S., &amp; <strong>Detrick, R. K.</strong></p>
+              <p class="pub-journal">In R. Zheng (Ed.), <em>The Intersection of AI and Student Development in Learning</em>. IGI Global Scientific Publishing.</p>
+            </div>
+          </div>
+
+          <div class="pub">
+            <span class="pub-year">2025</span>
+            <div>
+              <p class="pub-title"><a href="https://doi.org/10.4337/9781035337873.00018" target="_blank" rel="noopener">Collaborative approaches: Bridging the gap between generative AI developers and educators</a></p>
+              <p class="pub-authors"><strong>Detrick, R.</strong>, &amp; Kim, J.</p>
+              <p class="pub-journal">In S. Sabbaghan (Ed.), <em>Navigating Generative AI in Higher Education: Ethical, Theoretical and Practical Perspectives</em>. Edward Elgar Publishing.</p>
+            </div>
+          </div>
+
+          <div class="pub">
+            <span class="pub-year">2025</span>
+            <div>
+              <p class="pub-title"><a href="https://doi.org/10.4018/979-8-3693-7332-3.ch024" target="_blank" rel="noopener">Developing students' higher-order thinking skills with generative AI: Insights and strategies from a case study</a></p>
+              <p class="pub-authors">Fan, L., Kim, J., <strong>Detrick, R.</strong>, &amp; Li, N.</p>
+              <p class="pub-journal">In A. El Sayary (Ed.), <em>Prompt Engineering and Generative AI Applications for Teaching and Learning</em> (pp. 411–428). IGI Global Scientific Publishing.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Conference Proceedings -->
+      <div class="pub-subsection">
+        <p class="pub-subsection-title">Conference Proceedings</p>
+        <div class="pub-list">
+
+          <div class="pub">
+            <span class="pub-year">2025</span>
+            <div>
+              <p class="pub-title"><a href="https://repository.isls.org//handle/1/11254" target="_blank" rel="noopener">Impact of AI literacy on student-AI interactions on academic writing</a></p>
+              <p class="pub-authors">Kim, J., <strong>Detrick, R.</strong>, Lee, S., &amp; Li, N.</p>
+              <p class="pub-journal"><em>Proceedings of the 19th International Conference of the Learning Sciences (ICLS 2025)</em>. International Society of the Learning Sciences.</p>
+            </div>
+          </div>
+
+          <div class="pub">
+            <span class="pub-year">2025</span>
+            <div>
+              <p class="pub-title"><a href="https://doi.org/10.1109/ICAIE64856.2025.11158539" target="_blank" rel="noopener">GenAI in online collaborative argumentation: Comparing interaction patterns between high and low performers</a></p>
+              <p class="pub-authors">Kim, J., <strong>Detrick, R.</strong>, Lee, S., &amp; Li, N.</p>
+              <p class="pub-journal"><em>Proceedings of the 5th International Conference on Artificial Intelligence and Education (ICAIE 2025)</em>. IEEE.</p>
+              <div class="pub-meta">
+                <span class="badge badge-green">Excellent Oral Presentation Award</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SELECTED PRESENTATIONS -->
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Selected Presentations</h2>
+        <a href="cv.html" class="section-link">Full list in CV →</a>
+      </div>
+      <div class="pres-list">
+
+        <div class="pres">
+          <span class="pres-year">2026</span>
+          <div>
+            <p class="pres-title"><a href="https://digitalcommons.odu.edu/cgi/viewcontent.cgi?article=1139&context=knowledge_expo" target="_blank" rel="noopener">Designing and Teaching an International AI in Education Course: Lessons from ODU's BRIDGE Initiative</a></p>
+            <p class="pres-authors"><strong>Detrick, R.</strong></p>
+            <p class="pres-venue">ODU Knowledge &amp; Creativity Expo · Old Dominion University · April 2026</p>
+          </div>
+        </div>
+
+        <div class="pres">
+          <span class="pres-year">2025</span>
+          <div>
+            <p class="pres-title">AI-supported game design for lesson planning in professional military education</p>
+            <p class="pres-authors"><strong>Detrick, R.</strong>, Kim, J., &amp; Lin, X.</p>
+            <p class="pres-venue">Military Scholarship of Teaching and Learning (MSOTL) Forum · Virtual · December 2025</p>
+          </div>
+        </div>
+
+        <div class="pres">
+          <span class="pres-year">2025</span>
+          <div>
+            <p class="pres-title">Shaping the Future of Learning: Multisectoral Collaboration to Advance Human-AI Collaboration in Education</p>
+            <p class="pres-authors">Kim, J., &amp; <strong>Detrick, R.</strong></p>
+            <p class="pres-venue">Centre for Artificial Intelligence Ethics, Literacy, and Integrity · University of Calgary · February 2025</p>
+          </div>
+        </div>
+
+        <div class="pres">
+          <span class="pres-year">2025</span>
+          <div>
+            <p class="pres-title">A Conceptual Model for University Students' Use of Generative AI Based on Expectancy-Value Theory</p>
+            <p class="pres-authors"><strong>Detrick, R.</strong>, Kim, J., Yu, H., Li, J., &amp; Li, N.</p>
+            <p class="pres-venue">International Conference on Artificial Intelligence and Education (ICAIE) · Suzhou, China · May 2025</p>
+          </div>
+        </div>
+
+        <div class="pres">
+          <span class="pres-year">2025</span>
+          <div>
+            <p class="pres-title">An Exploratory Study of Online Doctoral Student Experiences</p>
+            <p class="pres-authors"><strong>Detrick, R.</strong>, &amp; Butler, B. M.</p>
+            <p class="pres-venue">AERA Annual Meeting · Denver, CO · April 2025</p>
+          </div>
+        </div>
+
+        <div class="pres">
+          <span class="pres-year">2025</span>
+          <div>
+            <p class="pres-title">Empowering Service Members through Skills Identification and Digital Credentials</p>
+            <p class="pres-authors"><strong>Detrick, R.</strong></p>
+            <p class="pres-venue">Council of College and Military Educators National Symposium · National Harbor, MD · February 2025</p>
+          </div>
+        </div>
+
+        <div class="pres">
+          <span class="pres-year">2024</span>
+          <div>
+            <p class="pres-title">Academic writing and the impact of student-generative AI interactions</p>
+            <p class="pres-authors"><strong>Detrick, R.</strong>, Kim, J., &amp; Li, N.</p>
+            <p class="pres-venue">10th International Conference on Smart Computing and Communication (ICSCC) · Bali, Indonesia · July 2024</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- AWARDS -->
+  <section>
+    <div class="container">
+      <h2 class="section-title">Awards &amp; Recognition</h2>
+      <div class="awards-list">
+
+        <div class="award">
+          <span class="award-year">2026</span>
+          <div>
+            <p class="award-name">Graduate School — 1st Best Oral Presentation</p>
+            <p class="award-org">ODU Knowledge &amp; Creativity Expo, Old Dominion University</p>
+          </div>
+        </div>
+
+        <div class="award">
+          <span class="award-year">2026</span>
+          <div>
+            <p class="award-name">Outstanding Student Award in Educational Psychology and Program Evaluation</p>
+            <p class="award-org">Old Dominion University</p>
+          </div>
+        </div>
+
+        <div class="award">
+          <span class="award-year">2025</span>
+          <div>
+            <p class="award-name">Excellent Oral Presentation Award</p>
+            <p class="award-org">IEEE International Conference on Artificial Intelligence and Education (ICAIE)</p>
+          </div>
+        </div>
+
+        <div class="award">
+          <span class="award-year">2024</span>
+          <div>
+            <p class="award-name">Outstanding Scientific Research Award</p>
+            <p class="award-org">Research Centre for AI and Education, Xi'an Jiaotong-Liverpool University (RC4AIED)</p>
+          </div>
+        </div>
+
+        <div class="award">
+          <span class="award-year">2024</span>
+          <div>
+            <p class="award-name">Linda Townsend Award</p>
+            <p class="award-org">Virginia Assessment Group</p>
+          </div>
+        </div>
+
+        <div class="award">
+          <span class="award-year">2019</span>
+          <div>
+            <p class="award-name">Diversity Fellowship</p>
+            <p class="award-org">Summer Institute in Survey Research Techniques, University of Michigan</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICE -->
+  <section>
+    <div class="container">
+      <h2 class="section-title">Service</h2>
+      <div class="service-grid">
+
+        <div class="service-card">
+          <p class="service-card-label">Journal Reviewer</p>
+          <div class="service-list-items">
+            <div class="service-item">International Journal of Human-Computer Interaction</div>
+            <div class="service-item">Australasian Journal of Educational Technology</div>
+            <div class="service-item">Journal of Educational Computing Research</div>
+            <div class="service-item">Cogent Education</div>
+            <div class="service-item">Discover Education</div>
+            <div class="service-item">Discover Artificial Intelligence</div>
+            <div class="service-item">Humanities and Social Sciences Communications</div>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <p class="service-card-label">Conference Reviewer &amp; Service</p>
+          <div class="service-list-items">
+            <div class="service-item">
+              <span class="service-item-name">ISLS Annual Meeting</span>
+              2025, 2026
+            </div>
+            <div class="service-item">
+              <span class="service-item-name">EDUCAUSE</span>
+              2024, 2025
+            </div>
+            <div class="service-item">
+              <span class="service-item-name">AECT Online Conference</span>
+              2025
+            </div>
+            <div class="service-item">
+              <span class="service-item-name">APA Annual Meeting</span>
+              2025
+            </div>
+            <div class="service-item">
+              <span class="service-item-name">AERA</span>
+              2025
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <div class="container">
+    <footer>
+      <span class="footer-name">Kay Detrick · rkdetrick.github.io</span>
+      <span class="footer-contact">Hampton Roads, VA · rkdetrick@gmail.com</span>
+    </footer>
+  </div>
+
+</body>
+</html>
