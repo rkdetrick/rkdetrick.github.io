@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Kay Detrick</title>
+  <meta name="description" content="About Kay Detrick — researcher, educator, and advocate at the intersection of technology, learning, and equity.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --text-primary: #1A1A1A;
+      --text-secondary: #6B6B6B;
+      --text-tertiary: #9B9B9B;
+      --bg: #FFFFFF;
+      --surface: #F5F5F3;
+      --border: #E5E5E0;
+      --accent-bg: #EBF3FB;
+      --accent-text: #1A6DB5;
+      --max-width: 1100px;
+    }
+
+    html { font-size: 16px; }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      color: var(--text-primary);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      padding: 0 28px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      transition: color 0.2s;
+      padding-bottom: 2px;
+    }
+
+    .nav-links a:hover { color: var(--text-primary); }
+    .nav-links a.active {
+      color: var(--text-primary);
+      border-bottom: 1.5px solid var(--text-primary);
+    }
+
+    /* ── LAYOUT ── */
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    section {
+      border-bottom: 1px solid var(--border);
+      padding: 44px 0;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 28px;
+    }
+
+    /* ── PAGE HEADER ── */
+    .page-header {
+      border-bottom: 1px solid var(--border);
+      padding: 48px 0 44px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .about-photo {
+      width: 260px;
+      height: 320px;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 12px;
+      display: block;
+      flex-shrink: 0;
+    }
+
+    .header-content {}
+
+    .page-eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      margin-bottom: 14px;
+      font-weight: 400;
+    }
+
+    .page-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 52px;
+      font-weight: 400;
+      line-height: 1.06;
+      letter-spacing: -0.01em;
+      margin-bottom: 20px;
+    }
+
+    .page-title em { font-style: italic; }
+
+    .page-tagline {
+      font-size: 14px;
+      line-height: 1.8;
+      color: var(--text-secondary);
+      font-weight: 300;
+      max-width: 480px;
+      margin-bottom: 28px;
+    }
+
+    .identity-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .identity-pill {
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 5px 13px;
+      color: var(--text-secondary);
+      font-weight: 400;
+    }
+
+    /* ── BIO ── */
+    .bio-text {
+      font-size: 15px;
+      line-height: 1.85;
+      color: var(--text-secondary);
+      font-weight: 300;
+      max-width: 760px;
+    }
+
+    .bio-text p + p {
+      margin-top: 20px;
+    }
+
+    /* ── EDUCATION TIMELINE ── */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 24px;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border);
+      align-items: start;
+    }
+
+    .timeline-item:last-child { border-bottom: none; }
+
+    .timeline-year {
+      font-size: 12px;
+      color: var(--text-tertiary);
+      letter-spacing: 0.06em;
+      font-weight: 400;
+      padding-top: 2px;
+      line-height: 1.4;
+    }
+
+    .timeline-content {}
+
+    .timeline-degree {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.35;
+      margin-bottom: 4px;
+    }
+
+    .timeline-institution {
+      font-size: 12px;
+      color: var(--text-secondary);
+      font-weight: 300;
+      margin-bottom: 4px;
+    }
+
+    .timeline-note {
+      font-size: 11px;
+      color: var(--text-tertiary);
+      letter-spacing: 0.04em;
+    }
+
+    .timeline-badge {
+      display: inline-block;
+      font-size: 10px;
+      letter-spacing: 0.06em;
+      background: var(--accent-bg);
+      color: var(--accent-text);
+      border-radius: 10px;
+      padding: 2px 8px;
+      margin-left: 6px;
+      vertical-align: middle;
+      font-weight: 400;
+    }
+
+    /* ── BEYOND THE CV ── */
+    .beyond-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .beyond-card {
+      background: var(--surface);
+      border-radius: 12px;
+      padding: 22px 24px;
+    }
+
+    .beyond-card-label {
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      margin-bottom: 10px;
+      font-weight: 400;
+    }
+
+    .beyond-card-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 17px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+
+    .beyond-card-body {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    .beyond-card-body a {
+      color: var(--accent-text);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 24px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+
+    .footer-contact {
+      font-size: 12px;
+      color: var(--text-secondary);
+      font-weight: 300;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 0 16px; }
+      .nav-links { gap: 16px; }
+      .nav-links a { font-size: 10px; }
+      .container { padding: 0 16px; }
+      section { padding: 32px 0; }
+
+      .page-header {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        padding: 36px 0 32px;
+      }
+
+      .about-photo {
+        width: 100%;
+        height: 280px;
+        object-position: center 20%;
+      }
+
+      .page-title { font-size: 38px; }
+      .page-tagline { max-width: 100%; }
+      .bio-text { font-size: 14px; }
+
+      .timeline-item {
+        grid-template-columns: 80px 1fr;
+        gap: 16px;
+      }
+
+      .beyond-grid { grid-template-columns: 1fr; }
+
+      footer {
+        flex-direction: column;
+        gap: 6px;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .nav-name { font-size: 15px; }
+      .nav-links { gap: 12px; }
+      .page-title { font-size: 32px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-name">Kay Detrick</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="teaching.html">Teaching</a></li>
+      <li><a href="cv.html">CV</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="container">
+    <div class="page-header">
+      <img src="about-photo.jpg" alt="Kay Detrick" class="about-photo">
+      <div class="header-content">
+        <p class="page-eyebrow">Researcher · Educator · Advocate</p>
+        <h1 class="page-title">About<br><em>Kay</em></h1>
+        <p class="page-tagline">I work at the intersection of technology, learning, and equity — and I believe the path here matters as much as the destination.</p>
+        <div class="identity-pills">
+          <span class="identity-pill">PhD Candidate, ODU</span>
+          <span class="identity-pill">They / Them</span>
+          <span class="identity-pill">First-Generation Scholar</span>
+          <span class="identity-pill">Military Family</span>
+          <span class="identity-pill">Hampton Roads, VA</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BIO -->
+  <section>
+    <div class="container">
+      <h2 class="section-title">My Story</h2>
+      <div class="bio-text">
+        <p>I am a researcher, educator, and advocate working at the intersection of technology, learning, and equity. My work focuses on how generative AI shapes academic self-regulated learning in higher education, a question that grew from watching a powerful new technology emerge in real time and feeling urgency about understanding its impact before educators could be proactive rather than reactive.</p>
+
+        <p>My path here was anything but linear. I grew up in a military family, the child of a Navy veteran whose career-ending injury reshaped our circumstances in ways that would define my relationship with education for years. I dropped out of high school, earned my GED, and found my way to community college before I had any sense of what was possible. I completed a BA in Psychology and an MA in Social Sciences from Troy University while living in four states, raising two sons, and navigating life as a military spouse. What once felt like a series of failures — deferred enrollments, interrupted semesters, cross-country moves mid-degree — I now understand as a nontraditional path that shaped everything that followed. During those years I also worked as a paraprofessional supporting students with disabilities in Hawaii, and was later diagnosed with ADHD myself. Both experiences gave me an early and personal understanding that the barriers many learners face are features of poorly designed environments, not limitations of the learners themselves.</p>
+
+        <p>For eight years, I worked at Solutions for Information Design (SOLID), a research and technology consulting firm specializing in military-connected education and credentialing. I rose from Research Assistant to Innovation Strategist and R&D Team Lead, leading national initiatives including MilGears and Map My Future. That work — helping service members and veterans translate their skills into civilian credentials and career pathways — deepened my understanding of how technology can either support or complicate learners' ability to reach their goals.</p>
+
+        <p>In 2025, I stepped away from that role to focus entirely on completing my dissertation at ODU, where I now serve as a Graduate Research and Teaching Assistant. I teach undergraduate and graduate courses while advancing research I hope will give practitioners grounded, evidence-based guidance on integrating generative AI in ways that support learning.</p>
+
+        <p>I share my story openly because I believe visibility matters. The students I work with are navigating jobs, families, deployments, and setbacks of their own. When they see that their instructor once dropped out of high school, I hope they understand something important: where you are right now is not where your story ends.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section>
+    <div class="container">
+      <h2 class="section-title">Education</h2>
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-year">2022 – Present</div>
+          <div class="timeline-content">
+            <p class="timeline-degree">PhD, Educational Psychology &amp; Program Evaluation <span class="timeline-badge">In progress</span></p>
+            <p class="timeline-institution">Old Dominion University, Darden College of Education</p>
+            <p class="timeline-note">Dissertation: AI engagement and academic self-regulated learning in higher education</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-year">2026 – 2027</div>
+          <div class="timeline-content">
+            <p class="timeline-degree">Alternative Teaching Licensure</p>
+            <p class="timeline-institution">EducateVA</p>
+            <p class="timeline-note">Endorsements: Business Education &amp; Marketing Education · Praxis certified in both areas · Level I complete · Level II in progress</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-year">2019</div>
+          <div class="timeline-content">
+            <p class="timeline-degree">Summer Institute in Survey Research Techniques</p>
+            <p class="timeline-institution">University of Michigan Institute for Social Research</p>
+            <p class="timeline-note">Diversity Fellowship recipient</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-year">2017</div>
+          <div class="timeline-content">
+            <p class="timeline-degree">MS, Social Science</p>
+            <p class="timeline-institution">Troy University</p>
+            <p class="timeline-note">Emphasis (18 credits) in Sociology</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-year">2014</div>
+          <div class="timeline-content">
+            <p class="timeline-degree">BS, Psychology</p>
+            <p class="timeline-institution">Troy University</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-year">2011</div>
+          <div class="timeline-content">
+            <p class="timeline-degree">AA, Liberal Arts</p>
+            <p class="timeline-institution">Tidewater Community College</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- BEYOND THE CV -->
+  <section>
+    <div class="container">
+      <h2 class="section-title">Beyond the CV</h2>
+      <div class="beyond-grid">
+
+        <div class="beyond-card">
+          <p class="beyond-card-label">Creative Writing</p>
+          <p class="beyond-card-title">What She Told Me</p>
+          <p class="beyond-card-body">My creative nonfiction piece <em>What She Told Me</em> was accepted for publication in <a href="https://www.instagram.com/constellateanthology/" target="_blank" rel="noopener">Constellate Anthology</a>, Volume III. Writing has always been a way I process the distance between where I've been and where I'm going.</p>
+        </div>
+
+        <div class="beyond-card">
+          <p class="beyond-card-label">Life Outside Research</p>
+          <p class="beyond-card-title">The Human Element</p>
+          <p class="beyond-card-body">I'm a military spouse, a parent of two, and a firm believer that being a whole person makes you a better researcher and educator. When I'm not writing or teaching, I'm reading fantasy, watching K-dramas, or losing track of time in a video game. I think that's fine.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <div class="container">
+    <footer>
+      <span class="footer-name">Kay Detrick · rkdetrick.github.io</span>
+      <span class="footer-contact">Hampton Roads, VA · rkdetrick@gmail.com</span>
+    </footer>
+  </div>
+
+</body>
+</html>
