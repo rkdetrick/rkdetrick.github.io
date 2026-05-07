@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV — Kay Detrick</title>
+  <meta name="description" content="Curriculum vitae for Kay Detrick — researcher, educator, and advocate in AI in education and technology-enhanced learning.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --text-primary: #1A1A1A;
+      --text-secondary: #6B6B6B;
+      --text-tertiary: #9B9B9B;
+      --bg: #FFFFFF;
+      --surface: #F5F5F3;
+      --border: #E5E5E0;
+      --accent-bg: #EBF3FB;
+      --accent-text: #1A6DB5;
+      --max-width: 1100px;
+    }
+
+    html { font-size: 16px; }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      color: var(--text-primary);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      padding: 0 28px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      transition: color 0.2s;
+      padding-bottom: 2px;
+    }
+
+    .nav-links a:hover { color: var(--text-primary); }
+    .nav-links a.active {
+      color: var(--text-primary);
+      border-bottom: 1.5px solid var(--text-primary);
+    }
+
+    /* ── LAYOUT ── */
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    section {
+      border-bottom: 1px solid var(--border);
+      padding: 44px 0;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 28px;
+    }
+
+    /* ── PAGE HEADER ── */
+    .page-header {
+      border-bottom: 1px solid var(--border);
+      padding: 48px 0 44px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .page-eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      margin-bottom: 14px;
+      font-weight: 400;
+    }
+
+    .page-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 52px;
+      font-weight: 400;
+      line-height: 1.06;
+      letter-spacing: -0.01em;
+      margin-bottom: 16px;
+    }
+
+    .page-title em { font-style: italic; }
+
+    .page-subtitle {
+      font-size: 14px;
+      line-height: 1.8;
+      color: var(--text-secondary);
+      font-weight: 300;
+      max-width: 520px;
+    }
+
+    .cv-download-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .cv-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--text-primary);
+      color: #FFFFFF;
+      font-family: 'Jost', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 14px 28px;
+      border-radius: 8px;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+
+    .cv-btn:hover { background: #3a3a3a; }
+
+    .cv-btn-icon {
+      font-size: 16px;
+      line-height: 1;
+    }
+
+    .cv-updated {
+      font-size: 11px;
+      color: var(--text-tertiary);
+      letter-spacing: 0.06em;
+    }
+
+    /* ── AT A GLANCE ── */
+    .glance-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    .glance-card {
+      background: var(--surface);
+      border-radius: 10px;
+      padding: 18px 20px;
+    }
+
+    .glance-n {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 32px;
+      font-weight: 600;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .glance-label {
+      font-size: 11px;
+      color: var(--text-tertiary);
+      letter-spacing: 0.04em;
+      font-weight: 400;
+      line-height: 1.4;
+    }
+
+    /* ── EXPERIENCE ── */
+    .exp-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .exp-item {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 28px;
+      align-items: start;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .exp-item:last-child { border-bottom: none; }
+
+    .exp-left {}
+
+    .exp-dates {
+      font-size: 11px;
+      color: var(--text-tertiary);
+      letter-spacing: 0.06em;
+      font-weight: 400;
+      margin-bottom: 4px;
+    }
+
+    .exp-org {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      line-height: 1.4;
+    }
+
+    .exp-right {}
+
+    .exp-role {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.35;
+      margin-bottom: 8px;
+    }
+
+    .exp-body {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    .exp-supervisor {
+      font-size: 11px;
+      color: var(--text-tertiary);
+      margin-top: 6px;
+      letter-spacing: 0.04em;
+    }
+
+    /* ── SKILLS & MEMBERSHIPS ── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .skills-card {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px 24px;
+    }
+
+    .skills-card-label {
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      margin-bottom: 16px;
+      font-weight: 400;
+    }
+
+    .skills-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .skills-item {
+      font-size: 13px;
+      color: var(--text-secondary);
+      font-weight: 300;
+      line-height: 1.5;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .skills-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .skills-item:first-child { padding-top: 0; }
+
+    .skills-item-name { font-weight: 400; color: var(--text-primary); }
+
+    .skills-item-date {
+      font-size: 11px;
+      color: var(--text-tertiary);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* ── BOTTOM CTA ── */
+    .bottom-cta {
+      padding: 44px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .bottom-cta-text {
+      font-size: 14px;
+      color: var(--text-secondary);
+      font-weight: 300;
+      line-height: 1.7;
+      max-width: 520px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 24px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+
+    .footer-contact {
+      font-size: 12px;
+      color: var(--text-secondary);
+      font-weight: 300;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 0 16px; }
+      .nav-links { gap: 16px; }
+      .nav-links a { font-size: 10px; }
+      .container { padding: 0 16px; }
+      section { padding: 32px 0; }
+
+      .page-header {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        padding: 36px 0 32px;
+      }
+
+      .page-title { font-size: 38px; }
+      .glance-grid { grid-template-columns: 1fr 1fr; }
+
+      .exp-item {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .skills-grid { grid-template-columns: 1fr; }
+
+      .bottom-cta {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 6px;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .nav-name { font-size: 15px; }
+      .nav-links { gap: 12px; }
+      .page-title { font-size: 32px; }
+      .glance-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-name">Kay Detrick</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="teaching.html">Teaching</a></li>
+      <li><a href="cv.html" class="active">CV</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="container">
+    <div class="page-header">
+      <div>
+        <p class="page-eyebrow">Curriculum Vitae</p>
+        <h1 class="page-title">Kay<br><em>Detrick</em></h1>
+        <p class="page-subtitle">A summary of my academic and professional background is below. For the complete record — including all publications, presentations, professional development, and service — the full CV is available to view or save.</p>
+      </div>
+      <div class="cv-download-wrap">
+        <a href="Detrick_CV_2026.pdf" target="_blank" rel="noopener" class="cv-btn">
+          <span class="cv-btn-icon">↗</span>
+          View Full CV
+        </a>
+        <span class="cv-updated">Updated May 2026</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- AT A GLANCE -->
+  <section>
+    <div class="container">
+      <h2 class="section-title">At a Glance</h2>
+      <div class="glance-grid">
+        <div class="glance-card">
+          <div class="glance-n">9</div>
+          <div class="glance-label">Peer-reviewed journal articles</div>
+        </div>
+        <div class="glance-card">
+          <div class="glance-n">5+</div>
+          <div class="glance-label">Book chapters &amp; conference proceedings</div>
+        </div>
+        <div class="glance-card">
+          <div class="glance-n">20+</div>
+          <div class="glance-label">Conference presentations</div>
+        </div>
+        <div class="glance-card">
+          <div class="glance-n">8</div>
+          <div class="glance-label">Years of industry experience</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROFESSIONAL EXPERIENCE -->
+  <section>
+    <div class="container">
+      <h2 class="section-title">Professional Experience</h2>
+      <div class="exp-list">
+
+        <div class="exp-item">
+          <div class="exp-left">
+            <p class="exp-dates">Aug 2025 – Present</p>
+            <p class="exp-org">Old Dominion University</p>
+          </div>
+          <div class="exp-right">
+            <p class="exp-role">Graduate Research Assistant</p>
+            <p class="exp-body">Supporting mixed-methods research on school librarians' AI self-efficacy and instructional practice. Contributing to study design, survey development, data analysis, and manuscript preparation. Additionally supporting evaluation research on course modality changes in LIS graduate programs.</p>
+            <p class="exp-supervisor">Supervisor: Dr. Elizabeth Burns</p>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-left">
+            <p class="exp-dates">Aug 2023 – Aug 2025</p>
+            <p class="exp-org">Old Dominion University</p>
+          </div>
+          <div class="exp-right">
+            <p class="exp-role">Graduate Research Assistant — AI in Education</p>
+            <p class="exp-body">Conducted research on generative AI in education, focusing on human–AI interaction, student prompt practices, AI literacy, and self-regulated learning. Co-authored multiple peer-reviewed journal articles, book chapters, and conference proceedings. Led one peer-reviewed journal article and one book chapter as first author.</p>
+            <p class="exp-supervisor">Supervisor: Dr. Jinhee Kim</p>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-left">
+            <p class="exp-dates">Aug 2023 – Aug 2025</p>
+            <p class="exp-org">Old Dominion University</p>
+          </div>
+          <div class="exp-right">
+            <p class="exp-role">Graduate Research Assistant — Adult Learning</p>
+            <p class="exp-body">Conducted research on working adult learners' experiences in online and project-based learning environments, with a focus on feedback literacy. Contributed to literature reviews, survey design, qualitative data collection, and manuscript development.</p>
+            <p class="exp-supervisor">Supervisor: Dr. Xinyue Ren</p>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-left">
+            <p class="exp-dates">2017 – 2025</p>
+            <p class="exp-org">Solutions for Information Design (SOLID)</p>
+          </div>
+          <div class="exp-right">
+            <p class="exp-role">Innovation Strategist &amp; Senior Research Analyst</p>
+            <p class="exp-body">Led applied research, design, and evaluation initiatives at the intersection of education, workforce development, and credentialing for military and civilian populations. Directed development of large-scale platforms including <a href="https://milgears.osd.mil/" target="_blank" rel="noopener" style="color: var(--accent-text); text-decoration: underline; text-underline-offset: 2px;">MilGears</a> and <a href="https://mapmyfuture.com/" target="_blank" rel="noopener" style="color: var(--accent-text); text-decoration: underline; text-underline-offset: 2px;">Map My Future</a>. Served as a senior member of the corporate management team, contributed to grant writing, and represented the organization at national conferences.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS & MEMBERSHIPS -->
+  <section>
+    <div class="container">
+      <h2 class="section-title">Skills &amp; Memberships</h2>
+      <div class="skills-grid">
+
+        <div class="skills-card">
+          <p class="skills-card-label">Professional Memberships</p>
+          <div class="skills-list">
+            <div class="skills-item">
+              <span class="skills-item-name">International Society of the Learning Sciences</span>
+              <span class="skills-item-date">2025–present</span>
+            </div>
+            <div class="skills-item">
+              <span class="skills-item-name">American Educational Research Association</span>
+              <span class="skills-item-date">2023–present</span>
+            </div>
+            <div class="skills-item">
+              <span class="skills-item-name">American Psychological Association</span>
+              <span class="skills-item-date">2023–present</span>
+            </div>
+            <div class="skills-item">
+              <span class="skills-item-name">EDUCAUSE</span>
+              <span class="skills-item-date">2023–present</span>
+            </div>
+            <div class="skills-item">
+              <span class="skills-item-name">Omicron Delta Kappa Honor Society</span>
+              <span class="skills-item-date">2023–present</span>
+            </div>
+            <div class="skills-item">
+              <span class="skills-item-name">Project Management Institute</span>
+              <span class="skills-item-date">2020–present</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="skills-card">
+          <p class="skills-card-label">Certifications &amp; Training</p>
+          <div class="skills-list">
+            <div class="skills-item">
+              <span class="skills-item-name">CITI Social &amp; Behavioral Research</span>
+              <span class="skills-item-date">2025</span>
+            </div>
+            <div class="skills-item">
+              <span class="skills-item-name">IBM Enterprise Design Thinking Practitioner</span>
+              <span class="skills-item-date">2024</span>
+            </div>
+            <div class="skills-item">
+              <span class="skills-item-name">Google Foundations of Project Management</span>
+              <span class="skills-item-date">2021</span>
+            </div>
+            <div class="skills-item">
+              <span class="skills-item-name">Certificate Program for the Credentialing Specialist</span>
+              <span class="skills-item-date">2018</span>
+            </div>
+            <div class="skills-item">
+              <span class="skills-item-name">Summer Institute in Survey Research Techniques</span>
+              <span class="skills-item-date">2019</span>
+            </div>
+            <div class="skills-item">
+              <span class="skills-item-name">CITI Responsible Conduct of Research</span>
+              <span class="skills-item-date">2022</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- BOTTOM CTA -->
+  <div class="container">
+    <div class="bottom-cta">
+      <p class="bottom-cta-text">The full CV includes complete publication details, all conference presentations, professional development, and service record. Opens in a new tab — save or print from there.</p>
+      <a href="Detrick_CV_2026.pdf" target="_blank" rel="noopener" class="cv-btn">
+        <span class="cv-btn-icon">↗</span>
+        View Full CV
+      </a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="container">
+    <footer>
+      <span class="footer-name">Kay Detrick · rkdetrick.github.io</span>
+      <span class="footer-contact">Hampton Roads, VA · rkdetrick@gmail.com</span>
+    </footer>
+  </div>
+
+</body>
+</html>
