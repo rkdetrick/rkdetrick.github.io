@@ -18,8 +18,10 @@
       --bg: #FFFFFF;
       --surface: #F5F5F3;
       --border: #E5E5E0;
-      --accent-bg: #EBF3FB;
-      --accent-text: #1A6DB5;
+      --accent-bg: #EBF1F7;
+      --accent-text: #2C5F8A;
+      --accent-warm: #A8501E;
+      --accent-warm-bg: #FBF0E8;
       --max-width: 1100px;
     }
 
@@ -53,7 +55,10 @@
       font-size: 18px;
       font-weight: 600;
       letter-spacing: 0.01em;
+      transition: color 0.2s;
     }
+
+    .nav-name:hover { color: var(--accent-text); }
 
     .nav-links {
       display: flex;
@@ -74,7 +79,7 @@
     .nav-links a:hover { color: var(--text-primary); }
     .nav-links a.active {
       color: var(--text-primary);
-      border-bottom: 1.5px solid var(--text-primary);
+      border-bottom: 1.5px solid var(--accent-text);
     }
 
     /* ── LAYOUT ── */
@@ -94,6 +99,18 @@
       font-size: 22px;
       font-weight: 600;
       margin-bottom: 24px;
+    }
+
+    .section-title::before {
+      content: '';
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      border-radius: 2px;
+      background: var(--accent-warm);
+      margin-right: 10px;
+      vertical-align: middle;
+      margin-bottom: 2px;
     }
 
     /* ── PAGE HEADER ── */
@@ -132,7 +149,7 @@
       letter-spacing: -0.01em;
     }
 
-    .page-title em { font-style: italic; }
+    .page-title em { font-style: italic; color: var(--accent-text); }
 
     .page-subtitle {
       font-size: 14px;
@@ -157,8 +174,8 @@
     }
 
     .philosophy-bar {
-      width: 2px;
-      background: var(--border);
+      width: 3px;
+      background: var(--accent-warm);
       flex-shrink: 0;
       border-radius: 2px;
     }
@@ -206,8 +223,8 @@
       font-size: 10px;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--text-tertiary);
-      font-weight: 400;
+      color: var(--accent-text);
+      font-weight: 500;
     }
 
     .course-badge {
@@ -319,7 +336,8 @@
     .quote-card {
       background: var(--surface);
       border-radius: 12px;
-      padding: 20px 22px;
+      padding: 20px 22px 20px 19px;
+      border-left: 3px solid var(--accent-warm);
     }
 
     .quote-text {
@@ -421,16 +439,26 @@
       .header-photo { width: 100%; height: 200px; }
       .philosophy-grid { grid-template-columns: 1fr; }
       .philosophy-photo { width: 100%; height: 180px; }
+      .philosophy-text { font-size: 15px; line-height: 1.8; }
 
       .page-title { font-size: 38px; }
+      .page-subtitle { font-size: 15px; line-height: 1.8; }
       .course-grid { grid-template-columns: 1fr; }
+      .course-name { font-size: 15px; }
+      .course-desc { font-size: 13px; line-height: 1.7; }
       .guest-row { grid-template-columns: 1fr; }
+      .guest-name { font-size: 13px; }
       .quote-grid { grid-template-columns: 1fr; }
+      .quote-text { font-size: 17px; }
+      .voices-intro { font-size: 14px; line-height: 1.8; }
 
       .synthesis-row {
         grid-template-columns: 1fr;
         gap: 6px;
       }
+
+      .synthesis-theme { font-size: 14px; }
+      .synthesis-note { font-size: 13px; }
 
       footer {
         flex-direction: column;
@@ -443,6 +471,8 @@
       .nav-name { font-size: 15px; }
       .nav-links { gap: 12px; }
       .page-title { font-size: 32px; }
+      .page-eyebrow { font-size: 12px; }
+      .footer-contact { font-size: 13px; }
     }
   </style>
 </head>
