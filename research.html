@@ -18,8 +18,10 @@
       --bg: #FFFFFF;
       --surface: #F5F5F3;
       --border: #E5E5E0;
-      --accent-bg: #EBF3FB;
-      --accent-text: #1A6DB5;
+      --accent-bg: #EBF1F7;
+      --accent-text: #2C5F8A;
+      --accent-warm: #A8501E;
+      --accent-warm-bg: #FBF0E8;
       --max-width: 1100px;
     }
 
@@ -53,7 +55,10 @@
       font-size: 18px;
       font-weight: 600;
       letter-spacing: 0.01em;
+      transition: color 0.2s;
     }
+
+    .nav-name:hover { color: var(--accent-text); }
 
     .nav-links {
       display: flex;
@@ -74,7 +79,7 @@
     .nav-links a:hover { color: var(--text-primary); }
     .nav-links a.active {
       color: var(--text-primary);
-      border-bottom: 1.5px solid var(--text-primary);
+      border-bottom: 1.5px solid var(--accent-text);
     }
 
     /* ── LAYOUT ── */
@@ -96,6 +101,18 @@
       margin-bottom: 28px;
     }
 
+    .section-title::before {
+      content: '';
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      border-radius: 2px;
+      background: var(--accent-warm);
+      margin-right: 10px;
+      vertical-align: middle;
+      margin-bottom: 2px;
+    }
+
     .section-header {
       display: flex;
       align-items: baseline;
@@ -110,7 +127,7 @@
       color: var(--text-tertiary);
       transition: color 0.2s;
     }
-    .section-link:hover { color: var(--text-primary); }
+    .section-link:hover { color: var(--accent-text); }
 
     /* ── PAGE HEADER ── */
     .page-header {
@@ -139,7 +156,7 @@
       letter-spacing: -0.01em;
     }
 
-    .page-title em { font-style: italic; }
+    .page-title em { font-style: italic; color: var(--accent-text); }
 
     .page-subtitle {
       font-size: 14px;
@@ -160,6 +177,7 @@
       background: var(--surface);
       border-radius: 10px;
       padding: 16px 18px;
+      border-left: 3px solid var(--accent-text);
     }
 
     .interest-title {
@@ -209,10 +227,10 @@
 
     .pub-year {
       font-size: 11px;
-      color: var(--text-tertiary);
+      color: var(--accent-warm);
       letter-spacing: 0.06em;
       padding-top: 2px;
-      font-weight: 400;
+      font-weight: 500;
     }
 
     .pub-title {
@@ -281,10 +299,10 @@
 
     .pres-year {
       font-size: 11px;
-      color: var(--text-tertiary);
+      color: var(--accent-warm);
       letter-spacing: 0.06em;
       padding-top: 2px;
-      font-weight: 400;
+      font-weight: 500;
     }
 
     .pres-title {
@@ -326,10 +344,10 @@
 
     .award-year {
       font-size: 11px;
-      color: var(--text-tertiary);
+      color: var(--accent-warm);
       letter-spacing: 0.06em;
       padding-top: 2px;
-      font-weight: 400;
+      font-weight: 500;
     }
 
     .award-name {
@@ -430,11 +448,24 @@
       }
 
       .page-title { font-size: 38px; }
+      .page-subtitle { font-size: 15px; line-height: 1.8; }
       .interests-grid { grid-template-columns: 1fr; }
+      .interest-title { font-size: 14px; }
+      .interest-body { font-size: 13px; line-height: 1.7; }
       .pub { grid-template-columns: 36px 1fr; gap: 12px; }
+      .pub-title { font-size: 14px; }
+      .pub-authors, .pub-journal { font-size: 13px; }
+      .pub-year { font-size: 12px; }
       .pres { grid-template-columns: 36px 1fr; gap: 12px; }
+      .pres-title { font-size: 14px; }
+      .pres-authors, .pres-venue { font-size: 13px; }
+      .pres-year { font-size: 12px; }
       .award { grid-template-columns: 36px 1fr; gap: 12px; }
+      .award-name { font-size: 14px; }
+      .award-org { font-size: 13px; }
+      .award-year { font-size: 12px; }
       .service-grid { grid-template-columns: 1fr; }
+      .service-item, .service-item-name { font-size: 13px; }
 
       footer {
         flex-direction: column;
@@ -447,7 +478,9 @@
       .nav-name { font-size: 15px; }
       .nav-links { gap: 12px; }
       .page-title { font-size: 32px; }
+      .page-eyebrow { font-size: 12px; }
       .interests-grid { grid-template-columns: 1fr; }
+      .footer-contact { font-size: 13px; }
     }
   </style>
 </head>
@@ -518,6 +551,45 @@
       <div class="pub-subsection">
         <p class="pub-subsection-title">Peer-Reviewed Journal Articles</p>
         <div class="pub-list">
+
+          <div class="pub">
+            <span class="pub-year">2026</span>
+            <div>
+              <p class="pub-title"><a href="https://doi.org/10.1007/s11423-026-10655-6" target="_blank" rel="noopener">Designing AI systems to support a productive-failure-based learning: Insights from adult learners on AI applications and AI system design principles</a></p>
+              <p class="pub-authors">Kim, J., Lin, X., Yu, S., &amp; <strong>Detrick, R.</strong></p>
+              <p class="pub-journal">Educational Technology Research and Development</p>
+              <div class="pub-meta">
+                <span class="badge badge-gray">SSCI · Q1</span>
+                <span class="badge badge-gray">IF 4.2</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pub">
+            <span class="pub-year">2026</span>
+            <div>
+              <p class="pub-title"><a href="https://doi.org/10.1080/02680513.2026.2692919" target="_blank" rel="noopener">Exploring students' perceptions and experiences of adopting generative artificial intelligence in OER-enabled pedagogy</a></p>
+              <p class="pub-authors">Ren, X., Luo, T., &amp; <strong>Detrick, R.</strong></p>
+              <p class="pub-journal">Open Learning: The Journal of Open, Distance and e-Learning</p>
+              <div class="pub-meta">
+                <span class="badge badge-gray">SSCI · Q1</span>
+                <span class="badge badge-gray">IF 3.1</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pub">
+            <span class="pub-year">2026</span>
+            <div>
+              <p class="pub-title"><a href="https://doi.org/10.1080/10494820.2026.2664072" target="_blank" rel="noopener">Student-AI interaction patterns in collaborative problem solving using Ordered Network Analysis</a></p>
+              <p class="pub-authors">Kim, J., Yang, G., <strong>Detrick, R.</strong>, Fan, L., Chan, W. S., &amp; Li, N.</p>
+              <p class="pub-journal">Interactive Learning Environments</p>
+              <div class="pub-meta">
+                <span class="badge badge-gray">SSCI · Q1</span>
+                <span class="badge badge-gray">IF 5.3</span>
+              </div>
+            </div>
+          </div>
 
           <div class="pub">
             <span class="pub-year">2026</span>
