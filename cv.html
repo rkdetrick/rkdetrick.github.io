@@ -18,8 +18,10 @@
       --bg: #FFFFFF;
       --surface: #F5F5F3;
       --border: #E5E5E0;
-      --accent-bg: #EBF3FB;
-      --accent-text: #1A6DB5;
+      --accent-bg: #EBF1F7;
+      --accent-text: #2C5F8A;
+      --accent-warm: #A8501E;
+      --accent-warm-bg: #FBF0E8;
       --max-width: 1100px;
     }
 
@@ -53,7 +55,10 @@
       font-size: 18px;
       font-weight: 600;
       letter-spacing: 0.01em;
+      transition: color 0.2s;
     }
+
+    .nav-name:hover { color: var(--accent-text); }
 
     .nav-links {
       display: flex;
@@ -74,7 +79,7 @@
     .nav-links a:hover { color: var(--text-primary); }
     .nav-links a.active {
       color: var(--text-primary);
-      border-bottom: 1.5px solid var(--text-primary);
+      border-bottom: 1.5px solid var(--accent-text);
     }
 
     /* ── LAYOUT ── */
@@ -94,6 +99,18 @@
       font-size: 22px;
       font-weight: 600;
       margin-bottom: 28px;
+    }
+
+    .section-title::before {
+      content: '';
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      border-radius: 2px;
+      background: var(--accent-warm);
+      margin-right: 10px;
+      vertical-align: middle;
+      margin-bottom: 2px;
     }
 
     /* ── PAGE HEADER ── */
@@ -124,7 +141,7 @@
       margin-bottom: 16px;
     }
 
-    .page-title em { font-style: italic; }
+    .page-title em { font-style: italic; color: var(--accent-text); }
 
     .page-subtitle {
       font-size: 14px;
@@ -146,7 +163,7 @@
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      background: var(--text-primary);
+      background: var(--accent-text);
       color: #FFFFFF;
       font-family: 'Jost', sans-serif;
       font-size: 12px;
@@ -159,7 +176,7 @@
       white-space: nowrap;
     }
 
-    .cv-btn:hover { background: #3a3a3a; }
+    .cv-btn:hover { background: #234A6E; }
 
     .cv-btn-icon {
       font-size: 16px;
@@ -191,6 +208,7 @@
       font-weight: 600;
       line-height: 1;
       margin-bottom: 6px;
+      color: var(--accent-text);
     }
 
     .glance-label {
@@ -223,9 +241,9 @@
 
     .exp-dates {
       font-size: 11px;
-      color: var(--text-tertiary);
+      color: var(--accent-warm);
       letter-spacing: 0.06em;
-      font-weight: 400;
+      font-weight: 500;
       margin-bottom: 4px;
     }
 
@@ -365,19 +383,28 @@
       }
 
       .page-title { font-size: 38px; }
+      .page-subtitle { font-size: 15px; line-height: 1.8; max-width: 100%; }
       .glance-grid { grid-template-columns: 1fr 1fr; }
+      .glance-label { font-size: 12px; }
 
       .exp-item {
         grid-template-columns: 1fr;
         gap: 8px;
       }
 
+      .exp-role { font-size: 15px; }
+      .exp-body { font-size: 14px; line-height: 1.75; }
+      .exp-org { font-size: 13px; }
+
       .skills-grid { grid-template-columns: 1fr; }
+      .skills-item, .skills-item-name { font-size: 14px; }
 
       .bottom-cta {
         flex-direction: column;
         align-items: flex-start;
       }
+
+      .bottom-cta-text { font-size: 15px; line-height: 1.75; max-width: 100%; }
 
       footer {
         flex-direction: column;
@@ -390,7 +417,9 @@
       .nav-name { font-size: 15px; }
       .nav-links { gap: 12px; }
       .page-title { font-size: 32px; }
+      .page-eyebrow { font-size: 12px; }
       .glance-grid { grid-template-columns: 1fr 1fr; }
+      .footer-contact { font-size: 13px; }
     }
   </style>
 </head>
@@ -432,7 +461,7 @@
       <h2 class="section-title">At a Glance</h2>
       <div class="glance-grid">
         <div class="glance-card">
-          <div class="glance-n">9</div>
+          <div class="glance-n">12</div>
           <div class="glance-label">Peer-reviewed journal articles</div>
         </div>
         <div class="glance-card">
