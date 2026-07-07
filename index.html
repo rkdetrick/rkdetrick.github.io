@@ -18,8 +18,10 @@
       --bg: #FFFFFF;
       --surface: #F5F5F3;
       --border: #E5E5E0;
-      --accent-bg: #EBF3FB;
-      --accent-text: #1A6DB5;
+      --accent-bg: #EBF1F7;
+      --accent-text: #2C5F8A;
+      --accent-warm: #A8501E;
+      --accent-warm-bg: #FBF0E8;
       --max-width: 1100px;
     }
 
@@ -53,7 +55,10 @@
       font-size: 18px;
       font-weight: 600;
       letter-spacing: 0.01em;
+      transition: color 0.2s;
     }
+
+    .nav-name:hover { color: var(--accent-text); }
 
     .nav-links {
       display: flex;
@@ -74,7 +79,7 @@
     .nav-links a:hover { color: var(--text-primary); }
     .nav-links a.active {
       color: var(--text-primary);
-      border-bottom: 1.5px solid var(--text-primary);
+      border-bottom: 1.5px solid var(--accent-text);
     }
 
     /* ── LAYOUT ── */
@@ -100,6 +105,18 @@
       font-family: 'Cormorant Garamond', serif;
       font-size: 22px;
       font-weight: 600;
+    }
+
+    .section-title::before {
+      content: '';
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      border-radius: 2px;
+      background: var(--accent-warm);
+      margin-right: 10px;
+      vertical-align: middle;
+      margin-bottom: 2px;
     }
 
     .section-link {
@@ -139,7 +156,7 @@
       letter-spacing: -0.01em;
     }
 
-    .hero-name em { font-style: italic; }
+    .hero-name em { font-style: italic; color: var(--accent-text); }
 
     .hero-tagline {
       font-size: 14px;
@@ -170,6 +187,7 @@
       font-weight: 600;
       line-height: 1;
       margin-bottom: 5px;
+      color: var(--accent-text);
     }
 
     .stat-label {
@@ -198,7 +216,7 @@
       transition: border-color 0.2s, color 0.2s;
     }
 
-    .pill:hover { border-color: var(--text-secondary); color: var(--text-primary); }
+    .pill:hover { border-color: var(--accent-text); color: var(--accent-text); }
 
     /* ── ABOUT ── */
     .about-grid {
@@ -236,8 +254,10 @@
       border-radius: 8px;
       color: var(--text-secondary);
       font-weight: 400;
-      transition: border-color 0.2s;
+      transition: border-color 0.2s, color 0.2s;
     }
+
+    .tag:hover { border-color: var(--accent-text); color: var(--accent-text); }
 
     /* ── PUBLICATIONS ── */
     .pub-list { display: flex; flex-direction: column; }
@@ -255,10 +275,10 @@
 
     .pub-year {
       font-size: 11px;
-      color: var(--text-tertiary);
+      color: var(--accent-warm);
       letter-spacing: 0.06em;
       padding-top: 2px;
-      font-weight: 400;
+      font-weight: 500;
     }
 
     .pub-title {
@@ -309,6 +329,7 @@
     }
 
     .mention:hover { background: #EEEDE9; }
+    .mention:hover .mention-arrow { color: var(--accent-text); }
 
     .mention-source {
       font-size: 10px;
@@ -327,6 +348,7 @@
     .mention-arrow {
       font-size: 20px;
       color: var(--text-tertiary);
+      transition: color 0.2s;
     }
 
     /* ── FOOTER ── */
@@ -364,10 +386,18 @@
       }
 
       .hero-name { font-size: 42px; }
-      .hero-tagline { max-width: 100%; }
+      .hero-tagline { max-width: 100%; font-size: 15px; line-height: 1.8; }
 
       .about-grid { grid-template-columns: 1fr; gap: 24px; }
+      .about-body { font-size: 15px; line-height: 1.85; }
       .pub { grid-template-columns: 36px 1fr; gap: 12px; }
+      .pub-title { font-size: 14px; }
+      .pub-authors { font-size: 13px; }
+      .pub-year { font-size: 12px; }
+      .mention-title { font-size: 14px; }
+      .mention-source { font-size: 11px; }
+      .stat-label { font-size: 12px; }
+      .tag { font-size: 13px; }
 
       footer {
         flex-direction: column;
@@ -381,6 +411,8 @@
       .nav-links { gap: 12px; }
       .hero-name { font-size: 36px; }
       .stat-grid { grid-template-columns: 1fr 1fr; }
+      .hero-eyebrow { font-size: 12px; }
+      .footer-contact { font-size: 13px; }
     }
   </style>
 </head>
@@ -468,7 +500,7 @@
         <div class="pub">
           <span class="pub-year">2026</span>
           <div>
-            <p class="pub-title">Adult learners’ perspectives of AI applications in supporting andragogy</p>
+            <p class="pub-title">Designing AI systems to support a productive-failure-based learning: Insights from adult learners on AI applications and AI system design principles</p>
             <p class="pub-authors">Kim, J., Lin, X., Yu, S., &amp; <strong>Detrick, R.</strong></p>
           </div>
         </div>
@@ -476,16 +508,16 @@
         <div class="pub">
           <span class="pub-year">2026</span>
           <div>
-            <p class="pub-title">Students’ perception of generative AI-assisted collaborative argumentation</p>
-            <p class="pub-authors">Kim, J., Yu, S., <strong>Detrick, R.</strong>, Fan, L., &amp; Li, N.</p>
+            <p class="pub-title">Exploring students’ perceptions and experiences of adopting generative artificial intelligence in OER-enabled pedagogy</p>
+            <p class="pub-authors">Ren, X., Luo, T., &amp; <strong>Detrick, R.</strong></p>
           </div>
         </div>
 
         <div class="pub">
           <span class="pub-year">2026</span>
           <div>
-            <p class="pub-title">Healthy habits on campus: A field study of nudge-based interventions to promote healthier food choices</p>
-            <p class="pub-authors"><strong>Detrick, R.</strong>, Kim, J., Lee, E., Touchstone, E., Yu, Y., Jia, M., &amp; Rusli, L.</p>
+            <p class="pub-title">Student-AI interaction patterns in collaborative problem solving using Ordered Network Analysis</p>
+            <p class="pub-authors">Kim, J., Yang, G., <strong>Detrick, R.</strong>, Fan, L., Chan, W. S., &amp; Li, N.</p>
           </div>
         </div>
 
@@ -500,6 +532,13 @@
         <h2 class="section-title">In the News</h2>
       </div>
       <div class="mention-list">
+        <a href="https://cdu.edu.ua/news/studenty-chnu-vchylysia-vprovadzhuvaty-shtuchnyi-intelekt-u-pedahohichnu-praktyku.html" target="_blank" rel="noopener" class="mention">
+          <div>
+            <p class="mention-source">Cherkasy National University · Ukraine (in Ukrainian)</p>
+            <p class="mention-title">Students Learn to Implement AI in Teaching Practice Through ODU Partnership Course</p>
+          </div>
+          <span class="mention-arrow">→</span>
+        </a>
         <a href="https://www.odu.edu/article/noble-goals-old-dominion-university-researchers-build-human-centered-ethical-ai-for" target="_blank" rel="noopener" class="mention">
           <div>
             <p class="mention-source">Old Dominion University</p>
